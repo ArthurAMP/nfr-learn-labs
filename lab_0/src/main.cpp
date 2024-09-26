@@ -1,18 +1,25 @@
-#include <Arduino.h>
+//
+// rascii
+// Created by: Evan Bertis-Sample
+// 
+// A dependency free 3D rendering engine, that outputs to the terminal using ASCII characters
+// Built purely for fun, and to learn more about 3D graphics
+//
 
-// put function declarations here:
-int myFunction(int, int);
+#define NATIVE // lets PlatformIO know that this is a native build
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-}
+#include <iostream>
+#include <signal.h>
+#include "app.hpp"
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+App app;
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+int main() {
+  std::cout << "Starting RASCII\n";
+  // initialize the app
+  app.init();   
+  // run the app
+  app.run();
+
+  return 0;
 }

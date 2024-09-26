@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.compute": "hlsl",
+        "iostream": "cpp"
+    }
+}
