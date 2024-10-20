@@ -44,14 +44,13 @@ const std::map<char, std::string> morseMap = {
     {' ', " "}
 };
 
-std::string textToMorse(std::string text)
-{
-    std::string morse = "";
-    for (char c : text)
-    {
-        morse += morseMap.at(toupper(c)) + " ";
+char charToMorse(char c) {
+    // make sure the character is uppercase
+    c = toupper(c);
+    if (morseMap.find(c) != morseMap.end()) {
+        return c;
     }
-    return morse;
+    return ' ';
 }
 
 #endif // __MORSE_H__
